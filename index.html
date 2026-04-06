@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HD Networking</title>
+  <meta name="description" content="HD Networking provides WiFi surveys, network solutions, cabling installation, router setup, and IT infrastructure support for homes and small businesses." />
+  <style>
+    :root {
+      --bg: #07070b;
+      --bg-soft: #10101a;
+      --panel: #141424;
+      --panel-2: #1a1a2d;
+      --text: #f6f1df;
+      --muted: #c8bdd5;
+      --gold: #d9a83f;
+      --gold-soft: #f1d38a;
+      --purple: #5f2f88;
+      --purple-2: #7a3fb1;
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 18px 50px rgba(0,0,0,0.35);
+      --radius: 20px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(122,63,177,0.22), transparent 30%),
+        radial-gradient(circle at top right, rgba(217,168,63,0.14), transparent 24%),
+        linear-gradient(180deg, #09090f 0%, #0c0c14 45%, #07070b 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      background: rgba(7,7,11,0.78);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: #120d00;
+      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+      box-shadow: 0 10px 30px rgba(217,168,63,0.24);
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 15px;
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover { color: var(--gold-soft); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      color: #150d00;
+      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+      box-shadow: 0 12px 32px rgba(217,168,63,0.22);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .hero {
+      padding: 70px 0 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(122,63,177,0.14);
+      color: var(--gold-soft);
+      border: 1px solid rgba(217,168,63,0.18);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3 { line-height: 1.15; margin: 0 0 14px; }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 64px);
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 720px;
+      margin: 0 0 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .point {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 15px;
+      color: var(--text);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)),
+        linear-gradient(135deg, rgba(122,63,177,0.18), rgba(217,168,63,0.08));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -60px -80px auto;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(217,168,63,0.22), transparent 60%);
+      pointer-events: none;
+    }
+
+    .mockup {
+      min-height: 360px;
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.16)),
+        radial-gradient(circle at 20% 20%, rgba(122,63,177,0.45), transparent 28%),
+        radial-gradient(circle at 80% 18%, rgba(217,168,63,0.28), transparent 22%),
+        linear-gradient(135deg, #111120, #1b1530 58%, #120f1f);
+      border: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px;
+    }
+
+    .mock-badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #150d00;
+      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+      padding: 7px 11px;
+      border-radius: 999px;
+    }
+
+    .mock-title {
+      font-size: 28px;
+      font-weight: 800;
+      margin-top: 14px;
+    }
+
+    .mock-sub { color: var(--muted); max-width: 320px; }
+
+    .mock-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .mini-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 14px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    section { padding: 34px 0; }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin-bottom: 10px;
+    }
+
+    .section-head p { color: var(--muted); margin: 0; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(217,168,63,0.18), rgba(122,63,177,0.24));
+      color: var(--gold-soft);
+      font-size: 23px;
+      margin-bottom: 14px;
+    }
+
+    .card p, .split p, .cta p { color: var(--muted); margin: 0; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .list-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .tick {
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+      color: #120d00;
+      font-size: 14px;
+      font-weight: 800;
+      margin-top: 1px;
+    }
+
+    .quote-box {
+      background: linear-gradient(135deg, rgba(95,47,136,0.28), rgba(217,168,63,0.12));
+      border: 1px solid rgba(217,168,63,0.16);
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 18px;
+    }
+
+    .info-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .info-row {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .label {
+      font-size: 12px;
+      color: var(--gold-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    form {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    label {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: #0d0d16;
+      color: var(--text);
+      font: inherit;
+      outline: none;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: rgba(217,168,63,0.65);
+      box-shadow: 0 0 0 3px rgba(217,168,63,0.08);
+    }
+
+    textarea { min-height: 140px; resize: vertical; }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      padding: 24px 0 40px;
+      margin-top: 24px;
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .split,
+      .contact-wrap,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav { align-items: flex-start; flex-direction: column; }
+      .field-grid,
+      .hero-points,
+      .mock-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 48px; }
+      .btn { width: 100%; }
+      .hero-actions { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <div class="brand-mark">HD</div>
+        <div>
+          HD Networking
+          <small>Small business network & WiFi services</small>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn btn-primary">Request a Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Reliable connectivity for homes and small businesses</div>
+          <h1>Professional network solutions with a practical, hands-on approach.</h1>
+          <p>
+            HD Networking provides WiFi surveys, structured cabling, router and switch installation,
+            and day-to-day network support for customers who need dependable service without the inflated cost of a large provider.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Request a Quote</a>
+            <a href="#services" class="btn btn-secondary">View Services</a>
+          </div>
+          <div class="hero-points">
+            <div class="point">WiFi surveys and signal improvement</div>
+            <div class="point">Cabling installation and tidy routing</div>
+            <div class="point">Router and switch setup</div>
+            <div class="point">Support for homes, offices and small sites</div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="mockup">
+            <div>
+              <span class="mock-badge">HD Networking</span>
+              <div class="mock-title">Trusted local network support</div>
+              <p class="mock-sub">Clear advice, clean installations, and practical solutions built around what the customer actually needs.</p>
+            </div>
+            <div class="mock-grid">
+              <div class="mini-card"><strong>WiFi Surveys</strong><br>Identify dead zones and improve coverage.</div>
+              <div class="mini-card"><strong>Cabling</strong><br>Structured data cabling and routing.</div>
+              <div class="mini-card"><strong>Router Setup</strong><br>Professional configuration and optimisation.</div>
+              <div class="mini-card"><strong>Support</strong><br>Reliable help for small business networks.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container split">
+        <div class="card">
+          <div class="section-head">
+            <h2>About HD Networking</h2>
+            <p>
+              HD Networking is a small UK-based technical services business focused on practical network and connectivity work.
+              The aim is simple: provide professional service, honest advice, and dependable installations for customers who want their network to work properly.
+            </p>
+          </div>
+          <p>
+            The business is built on real field engineering experience, technical site work, discipline, and a strong work ethic.
+            Rather than trying to look like a large corporate provider, HD Networking is positioned as a capable, growing business that values quality workmanship and good customer relationships.
+          </p>
+        </div>
+        <div class="card">
+          <h3>What clients can expect</h3>
+          <div class="list">
+            <div class="list-item"><div class="tick">✓</div><div><strong>Clear communication</strong><br>Plain-English advice without unnecessary jargon.</div></div>
+            <div class="list-item"><div class="tick">✓</div><div><strong>Tidy work</strong><br>Neat cable routing, organised installations, and attention to detail.</div></div>
+            <div class="list-item"><div class="tick">✓</div><div><strong>Honest recommendations</strong><br>Solutions based on the actual job, not overselling equipment.</div></div>
+            <div class="list-item"><div class="tick">✓</div><div><strong>Reliable support</strong><br>Help for homes, small offices, shops, and local organisations.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Services</h2>
+          <p>Professional networking services designed for real homes, small businesses, and local workspaces.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">📶</div>
+            <h3>WiFi Surveys</h3>
+            <p>Assess signal strength, identify dead zones, and recommend practical ways to improve wireless coverage and stability.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🌐</div>
+            <h3>Network Solutions</h3>
+            <p>Setup, troubleshooting, and optimisation for networks that need to be reliable, secure, and easy to manage.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🔌</div>
+            <h3>Cabling Installation</h3>
+            <p>Structured cabling for data and network points, including tidy routing, basic trunking, termination, and testing.</p>
+          </article>
+          <article class="card">
+            <div class="icon">📡</div>
+            <h3>Router & Switch Installation</h3>
+            <p>Install and configure routers, switches, and core network devices for homes, offices, and small commercial spaces.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🛠️</div>
+            <h3>Network Troubleshooting</h3>
+            <p>Diagnose common connectivity issues, unstable WiFi, slow performance, and basic equipment faults.</p>
+          </article>
+          <article class="card">
+            <div class="icon">💻</div>
+            <h3>IT Infrastructure Support</h3>
+            <p>Practical support for small business setups, including device connectivity, basic network organisation, and upgrades.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="container split">
+        <div class="card">
+          <div class="section-head">
+            <h2>Why choose HD Networking</h2>
+            <p>A professional but realistic service built around trust, workmanship, and reliable support.</p>
+          </div>
+          <div class="list">
+            <div class="list-item"><div class="tick">✓</div><div><strong>Hands-on experience</strong><br>Built on real technical site work and field engineering experience.</div></div>
+            <div class="list-item"><div class="tick">✓</div><div><strong>Professional approach</strong><br>Disciplined, organised, and focused on getting the job done properly.</div></div>
+            <div class="list-item"><div class="tick">✓</div><div><strong>Tailored service</strong><br>Suitable for homes and smaller organisations that need practical solutions.</div></div>
+            <div class="list-item"><div class="tick">✓</div><div><strong>Honest value</strong><br>Fair pricing and straightforward recommendations.</div></div>
+          </div>
+        </div>
+        <div class="quote-box">
+          <h2>Built to grow the right way</h2>
+          <p>
+            HD Networking is not presented as a giant provider. It is a growing business built on skill, discipline, and a clear commitment to dependable service.
+            The focus is on quality installations, strong customer trust, and practical support that makes a real difference.
+          </p>
+          <div class="hero-actions" style="margin-top:20px; margin-bottom:0;">
+            <a href="#contact" class="btn btn-primary">Speak About Your Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Request a quote</h2>
+          <p>Use the form below to ask about a WiFi survey, network installation, cabling job, or connectivity issue.</p>
+        </div>
+        <div class="contact-wrap">
+          <div class="info-grid">
+            <div class="info-row">
+              <div class="label">Business Name</div>
+              <div>HD Networking</div>
+            </div>
+            <div class="info-row">
+              <div class="label">Email</div>
+              <div>contact@hd-networking.co.uk</div>
+            </div>
+            <div class="info-row">
+              <div class="label">Phone</div>
+              <div>+44 7762455558</div>
+            </div>
+            <div class="info-row">
+              <div class="label">Service Area</div>
+              <div>Herefordshire / UK coverage as applicable</div>
+            </div>
+          </div>
+
+          <form action="mailto:your@email.com" method="post" enctype="text/plain">
+            <div class="field-grid">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="Name" type="text" placeholder="" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="Email" type="email" placeholder="" required />
+              </div>
+            </div>
+            <div class="field-grid">
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="Phone" type="text" placeholder="" />
+              </div>
+              <div class="field">
+                <label for="service">Service Needed</label>
+                <select id="service" name="Service Needed">
+                  <option>WiFi Survey</option>
+                  <option>Network Solutions</option>
+                  <option>Cabling Installation</option>
+                  <option>Router / Switch Installation</option>
+                  <option>Troubleshooting</option>
+                  <option>General Enquiry</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="Message" placeholder="Tell us a bit about the work you need."></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Send Enquiry</button>
+            <div class="form-note">.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>© 2026 HD Networking. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
