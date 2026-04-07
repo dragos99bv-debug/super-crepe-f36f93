@@ -73,12 +73,14 @@
       width: 42px;
       height: 42px;
       border-radius: 14px;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      color: #120d00;
-      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
-      box-shadow: 0 10px 30px rgba(217,168,63,0.24);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .brand small {
@@ -468,7 +470,7 @@
   <div class="topbar">
     <div class="container nav">
       <a href="#home" class="brand">
-        <div class="brand-mark">HD</div>
+        <div class="brand-mark"><img src="logo.png" alt="HD Networking logo"></div>
         <div>
           HD Networking
           <small>Small business network & WiFi services</small>
