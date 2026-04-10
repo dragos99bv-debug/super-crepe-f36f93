@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
   <title>Thank You - HD Networking</title>
   <meta name="description" content="Thank you for your enquiry. HD Networking will reply as soon as possible." />
   <style>
@@ -75,12 +76,7 @@
       width: 42px;
       height: 42px;
       border-radius: 14px;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      color: #120d00;
-      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
-      box-shadow: 0 10px 30px rgba(217,168,63,0.24);
+      object-fit: contain;
     }
 
     .brand small {
@@ -208,7 +204,7 @@
   <div class="topbar">
     <div class="container nav">
       <a href="/" class="brand">
-        <div class="brand-mark">HD</div>
+        <img class="brand-mark" src="/logo.png" alt="HD Networking logo" />
         <div>
           HD Networking
           <small>Small business network & WiFi services</small>
