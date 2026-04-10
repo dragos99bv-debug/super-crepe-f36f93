@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You - HD Networking</title>
+  <style>
+    :root {
+      --bg: #07070b;
+      --bg-soft: #10101a;
+      --panel: #141424;
+      --text: #f6f1df;
+      --muted: #c8bdd5;
+      --gold: #d9a83f;
+      --gold-soft: #f1d38a;
+      --purple: #5f2f88;
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 18px 50px rgba(0,0,0,0.35);
+      --radius: 20px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(122,63,177,0.22), transparent 30%),
+        radial-gradient(circle at top right, rgba(217,168,63,0.14), transparent 24%),
+        linear-gradient(180deg, #09090f 0%, #0c0c14 45%, #07070b 100%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      box-shadow: var(--shadow);
+      max-width: 560px;
+      width: 100%;
+    }
+
+    .icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(217,168,63,0.18), rgba(122,63,177,0.24));
+      color: var(--gold-soft);
+      font-size: 30px;
+      margin: 0 auto 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin: 0 0 12px;
+      line-height: 1.2;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0 0 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 24px;
+      border-radius: 14px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      cursor: pointer;
+      color: #150d00;
+      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+      box-shadow: 0 12px 32px rgba(217,168,63,0.22);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">&#10003;</div>
+    <h1>Thank you for your enquiry</h1>
+    <p>Your message has been received. We will get back to you as soon as possible.</p>
+    <a href="/" class="btn">Back to Home</a>
+  </div>
+</body>
+</html>
