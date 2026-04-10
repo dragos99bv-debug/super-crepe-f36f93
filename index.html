@@ -645,45 +645,48 @@
             </div>
           </div>
 
-          <form name="contact" method="POST" data-netlify="true" action="/">
-  <input type="hidden" name="form-name" value="contact">
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/">
+            <input type="hidden" name="form-name" value="contact" />
+            <p style="display:none;">
+              <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+            </p>
 
-  <div class="field-grid">
-    <div class="field">
-      <label for="name">Name</label>
-      <input id="name" name="Name" type="text" required />
-    </div>
-    <div class="field">
-      <label for="email">Email</label>
-      <input id="email" name="Email" type="email" required />
-    </div>
-  </div>
+            <div class="field-grid">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required />
+              </div>
+            </div>
 
-  <div class="field-grid">
-    <div class="field">
-      <label for="phone">Phone</label>
-      <input id="phone" name="Phone" type="text" />
-    </div>
-    <div class="field">
-      <label for="service">Service Needed</label>
-      <select id="service" name="Service Needed">
-        <option>WiFi Survey</option>
-        <option>Network Solutions</option>
-        <option>Cabling Installation</option>
-        <option>Router / Switch Installation</option>
-        <option>Troubleshooting</option>
-        <option>General Enquiry</option>
-      </select>
-    </div>
-  </div>
+            <div class="field-grid">
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="text" />
+              </div>
+              <div class="field">
+                <label for="service">Service Needed</label>
+                <select id="service" name="service">
+                  <option>WiFi Survey</option>
+                  <option>Network Solutions</option>
+                  <option>Cabling Installation</option>
+                  <option>Router / Switch Installation</option>
+                  <option>Troubleshooting</option>
+                  <option>General Enquiry</option>
+                </select>
+              </div>
+            </div>
 
-  <div class="field">
-    <label for="message">Message</label>
-    <textarea id="message" name="Message" placeholder="Tell us a bit about the work you need."></textarea>
-  </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us a bit about the work you need." required></textarea>
+            </div>
 
-  <button class="btn btn-primary" type="submit">Send Enquiry</button>
-  <div class="form-note">We will reply as soon as possible.</div>
+            <button class="btn btn-primary" type="submit">Send Enquiry</button>
+            <div class="form-note">We will reply as soon as possible.</div>
           </form>
         </div>
       </div>
