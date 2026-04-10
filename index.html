@@ -645,41 +645,45 @@
             </div>
           </div>
 
-          <form name="contact" method="POST" data-netlify="true">
+          <form name="contact" method="POST" data-netlify="true" action="/">
   <input type="hidden" name="form-name" value="contact">
-            <div class="field-grid">
-              <div class="field">
-                <label for="name">Name</label>
-                <input id="name" name="Name" type="text" placeholder="" required />
-              </div>
-              <div class="field">
-                <label for="email">Email</label>
-                <input id="email" name="Email" type="email" placeholder="" required />
-              </div>
-            </div>
-            <div class="field-grid">
-              <div class="field">
-                <label for="phone">Phone</label>
-                <input id="phone" name="Phone" type="text" placeholder="" />
-              </div>
-              <div class="field">
-                <label for="service">Service Needed</label>
-                <select id="service" name="Service Needed">
-                  <option>WiFi Survey</option>
-                  <option>Network Solutions</option>
-                  <option>Cabling Installation</option>
-                  <option>Router / Switch Installation</option>
-                  <option>Troubleshooting</option>
-                  <option>General Enquiry</option>
-                </select>
-              </div>
-            </div>
-            <div class="field">
-              <label for="message">Message</label>
-              <textarea id="message" name="Message" placeholder="Tell us a bit about the work you need."></textarea>
-            </div>
-            <button class="btn btn-primary" type="submit">Send Enquiry</button>
-            <div class="form-note">.</div>
+
+  <div class="field-grid">
+    <div class="field">
+      <label for="name">Name</label>
+      <input id="name" name="Name" type="text" required />
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" name="Email" type="email" required />
+    </div>
+  </div>
+
+  <div class="field-grid">
+    <div class="field">
+      <label for="phone">Phone</label>
+      <input id="phone" name="Phone" type="text" />
+    </div>
+    <div class="field">
+      <label for="service">Service Needed</label>
+      <select id="service" name="Service Needed">
+        <option>WiFi Survey</option>
+        <option>Network Solutions</option>
+        <option>Cabling Installation</option>
+        <option>Router / Switch Installation</option>
+        <option>Troubleshooting</option>
+        <option>General Enquiry</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="message">Message</label>
+    <textarea id="message" name="Message" placeholder="Tell us a bit about the work you need."></textarea>
+  </div>
+
+  <button class="btn btn-primary" type="submit">Send Enquiry</button>
+  <div class="form-note">We will reply as soon as possible.</div>
           </form>
         </div>
       </div>
