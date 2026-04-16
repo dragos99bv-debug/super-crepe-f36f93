@@ -653,8 +653,9 @@
 
           <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
             <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="subject" value="New quote enquiry from %{formName}" />
             <p style="display:none;">
-              <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+              <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
             </p>
 
             <div class="field-grid">
