@@ -652,9 +652,10 @@
           </div>
 
           <form action="https://formspree.io/f/xvzdlgnd" method="POST">
-            <input type="hidden" name="form-name" value="contact" />
-            <p style="display:none;">
-              <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+            <input type="hidden" name="_subject" value="New enquiry from HD Networking website" />
+            <input type="hidden" name="_next" value="/thank-you.html" />
+            <p style="position:absolute;left:-5000px;" aria-hidden="true">
+              <label>Leave this field empty: <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
             </p>
 
             <div class="field-grid">
