@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You - HD Networking</title>
-  <meta name="description" content="Thank you for your enquiry. HD Networking will reply as soon as possible." />
+  <title>Thank You - HD Networking and Cabling</title>
+  <meta name="description" content="Thank you for your enquiry. HD Networking and Cabling will reply as soon as possible." />
   <style>
     :root {
-      --bg: #07070b;
-      --bg-soft: #10101a;
-      --panel: #141424;
-      --panel-2: #1a1a2d;
-      --text: #f6f1df;
-      --muted: #c8bdd5;
-      --gold: #d9a83f;
-      --gold-soft: #f1d38a;
-      --purple: #5f2f88;
-      --purple-2: #7a3fb1;
-      --border: rgba(255,255,255,0.08);
-      --shadow: 0 18px 50px rgba(0,0,0,0.35);
+      --bg: #050b16;
+      --bg-soft: #0a1424;
+      --panel: #0e1b30;
+      --panel-2: #12233d;
+      --text: #eaf2ff;
+      --muted: #a7bbd6;
+      --blue: #1f6fe0;
+      --blue-soft: #5fa3ff;
+      --blue-deep: #0b3a86;
+      --border: rgba(120,170,240,0.14);
+      --shadow: 0 18px 50px rgba(0,0,0,0.42);
       --radius: 20px;
       --max: 1180px;
     }
@@ -29,9 +28,9 @@
       margin: 0;
       font-family: Inter, Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(122,63,177,0.22), transparent 30%),
-        radial-gradient(circle at top right, rgba(217,168,63,0.14), transparent 24%),
-        linear-gradient(180deg, #09090f 0%, #0c0c14 45%, #07070b 100%);
+        radial-gradient(circle at top left, rgba(31,111,224,0.28), transparent 32%),
+        radial-gradient(circle at top right, rgba(95,163,255,0.16), transparent 26%),
+        linear-gradient(180deg, #061021 0%, #081627 45%, #050b16 100%);
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
@@ -51,7 +50,7 @@
       top: 0;
       z-index: 1000;
       backdrop-filter: blur(12px);
-      background: rgba(7,7,11,0.78);
+      background: rgba(5,11,22,0.82);
       border-bottom: 1px solid var(--border);
     }
 
@@ -60,7 +59,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      padding: 14px 0;
+      padding: 12px 0;
     }
 
     .brand {
@@ -72,15 +71,21 @@
     }
 
     .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      color: #120d00;
-      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
-      box-shadow: 0 10px 30px rgba(217,168,63,0.24);
+      height: 52px;
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #ffffff;
+      padding: 5px 9px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 8px 22px rgba(31,111,224,0.22);
+    }
+
+    .brand-mark img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
     }
 
     .brand small {
@@ -105,10 +110,10 @@
     }
 
     .nav-links a.btn-primary {
-      color: #000000;
+      color: #ffffff;
     }
 
-    .nav-links a:hover { color: var(--gold-soft); }
+    .nav-links a:hover { color: var(--blue-soft); }
 
     .btn {
       display: inline-flex;
@@ -125,9 +130,9 @@
     .btn:hover { transform: translateY(-1px); }
 
     .btn-primary {
-      color: #000000;
-      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
-      box-shadow: 0 12px 32px rgba(217,168,63,0.22);
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--blue-soft), var(--blue));
+      box-shadow: 0 12px 32px rgba(31,111,224,0.32);
     }
 
     .thank-you-section {
@@ -155,8 +160,8 @@
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, rgba(217,168,63,0.18), rgba(122,63,177,0.24));
-      color: var(--gold-soft);
+      background: linear-gradient(135deg, rgba(95,163,255,0.2), rgba(31,111,224,0.3));
+      color: var(--blue-soft);
       font-size: 34px;
       margin: 0 auto 24px;
     }
@@ -208,18 +213,18 @@
   <div class="topbar">
     <div class="container nav">
       <a href="/" class="brand">
-        <div class="brand-mark">HD</div>
+        <div class="brand-mark"><img src="/hd-networking-and-cabling-logo.png" alt="HD Networking and Cabling logo"></div>
         <div>
-          HD Networking
-          <small>Small business network & WiFi services</small>
+          HD Networking and Cabling
+          <small>Self-employed network &amp; cabling engineer</small>
         </div>
       </a>
       <div class="nav-links">
         <a href="/#about">About</a>
         <a href="/#services">Services</a>
-        <a href="/#why">Why Us</a>
+        <a href="/#why">Why Me</a>
         <a href="/#contact">Contact</a>
-        <a href="/#contact" class="btn btn-primary">Request a Quote</a>
+        <a href="/#contact" class="btn btn-primary">Get a Free Quote</a>
       </div>
     </div>
   </div>
@@ -229,7 +234,7 @@
       <div class="thank-you-card">
         <div class="thank-you-icon">✓</div>
         <h1>Thank you for your enquiry</h1>
-        <p>Your message has been received. We will do our best to reply as soon as possible.</p>
+        <p>Your message has come straight through to me. I'll do my best to get back to you as soon as I can.</p>
         <a href="/" class="btn btn-primary">Back to Home</a>
       </div>
     </div>
@@ -237,7 +242,7 @@
 
   <footer>
     <div class="container footer-wrap">
-      <div>&copy; 2026 HD Networking. All rights reserved.</div>
+      <div>&copy; 2026 HD Networking and Cabling. Self-employed networking &amp; cabling engineer.</div>
       <div class="footer-links">
         <a href="/">Home</a>
         <a href="/#about">About</a>
